@@ -1,9 +1,23 @@
 
 import { Link, Outlet } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export function FacultyDashboard() {
+
+  const navigate=useNavigate()
+
+
+
+  const logOut=()=>{
+    console.log("inside logout function");
+    localStorage.clear()
+   navigate("/")
+  }
+
+
   return (
     <div className="min-h-screen flex">
+     
 
       {/* Sidebar */}
       <div className="w-64 bg-gray-900 text-white flex flex-col p-5 gap-4">
@@ -38,7 +52,7 @@ export function FacultyDashboard() {
           View Attendance
         </Link>
 
-        <button className="mt-auto bg-red-500 hover:bg-red-700 p-2 rounded">
+        <button onClick={logOut} className="mt-auto bg-red-500 hover:bg-red-700 p-2 rounded">
           Logout
         </button>
 

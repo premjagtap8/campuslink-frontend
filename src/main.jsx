@@ -20,6 +20,8 @@ import { AddSubject } from './AddSubject.jsx'
 import { AllSubjects } from './AllSubjecs.jsx'
 import { UpdateSubject } from './UpdateSubject.jsx'
 import { ProtectedRoute } from './ProtectedRoute.jsx'
+import { Error } from './components/Error.jsx'
+
 
 
 
@@ -39,6 +41,7 @@ const router=createBrowserRouter([
       <FacultyDashboard/>
     </ProtectedRoute>,
     children:[
+  
       {
         path:"add-student",
         element:<AddStudent/>
@@ -93,6 +96,10 @@ const router=createBrowserRouter([
      
 
     ]
+  },
+  {
+    path:"*",
+    element:<Error/>
   }
 
 ])

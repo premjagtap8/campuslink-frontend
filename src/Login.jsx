@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Input } from "./components/Input";
 
 export function Login() {
   const [username, setusername] = useState("");
@@ -57,6 +58,8 @@ export function Login() {
       >
         
         <h1 className="text-2xl font-bold text-center">Login</h1>
+
+       
 
         <input
           type="text"

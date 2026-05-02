@@ -3,6 +3,18 @@
 import { Link, Outlet } from "react-router-dom";
 
 export function AdminDashboard() {
+
+
+  const logOut=()=>{
+    console.log("logout function is called");
+    localStorage.clear()
+    
+
+  }
+
+
+
+
   return (
     <div className="min-h-screen flex">
       
@@ -38,6 +50,8 @@ export function AdminDashboard() {
           All Subjects
         </Link>
       </div>
+
+      <button onClick={logOut}>logout</button>
 
       {/* Main Content */}
       <div className="flex-1 bg-gray-100 p-6">

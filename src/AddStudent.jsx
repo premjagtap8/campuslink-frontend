@@ -1,7 +1,9 @@
 import { useForm } from "react-hook-form";
+import {useNavigate} from "react-router-dom"
 
 export function AddStudent() {
   const { register, handleSubmit } = useForm();
+  const navigate=useNavigate()
 
   const addStudent = (data) => {
     fetch("http://localhost:8091/student/add-student", {
@@ -17,6 +19,8 @@ export function AddStudent() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        navigate("/faculty-dashboard/all-students")
+
       });
   };
 

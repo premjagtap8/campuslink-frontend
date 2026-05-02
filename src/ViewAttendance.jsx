@@ -21,6 +21,7 @@ export function ViewAttendance() {
 
   const getAllAttendanceByFaculty = (data) => {
     const username=localStorage.getItem("username")
+    console.log("insie getAllAttendanceByFaculty method")
     fetch(
       `http://localhost:8091/attendance/get-attendance/${username}/${data.subjectId}/${data.date}`
     )
